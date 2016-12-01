@@ -6,7 +6,7 @@
     <groupId>de.dominikschadow.jeesecurity</groupId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
-    <name>FerrisWheelManager</name>
+    <name>JEE Security</name>
     <url>https://github.com/dschadow/JEESecurity</url>
     <description>This repository contains different security related Java Enterprise Edition (JEE) projects.</description>
 
@@ -19,7 +19,19 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <slf4j.version>1.7.12</slf4j.version>
         <flyway.version>3.2.1</flyway.version>
+        <sonar.language>java</sonar.language>
     </properties>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/dschadow/JEESecurity/issues</url>
+    </issueManagement>
+
+    <scm>
+        <connection>scm:git:git@github.com:dschadow/JEESecurity.git</connection>
+        <developerConnection>scm:git:git@github.com:dschadow/JEESecurity.git</developerConnection>
+        <url>https://github.com/dschadow/JEESecurity</url>
+    </scm>
 
     <dependencyManagement>
         <dependencies>
@@ -32,7 +44,7 @@
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
-                <version>5.1.36</version>
+                <version>5.1.38</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.persistence</groupId>
@@ -43,12 +55,12 @@
             <dependency>
                 <groupId>com.h2database</groupId>
                 <artifactId>h2</artifactId>
-                <version>1.4.187</version>
+                <version>1.4.190</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-core</artifactId>
-                <version>1.2.3</version>
+                <version>1.2.4</version>
             </dependency>
             <dependency>
                 <groupId>org.flywaydb</groupId>
@@ -104,6 +116,11 @@
                     <artifactId>flyway-maven-plugin</artifactId>
                     <version>${flyway.version}</version>
                 </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>sonar-maven-plugin</artifactId>
+                    <version>2.7.1</version>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>
@@ -118,7 +135,7 @@
             <plugin>
                 <groupId>org.owasp</groupId>
                 <artifactId>dependency-check-maven</artifactId>
-                <version>1.3.1</version>
+                <version>1.3.3</version>
                 <reportSets>
                     <reportSet>
                         <reports>
